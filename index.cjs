@@ -7,36 +7,6 @@ const { Expense } = require('./Schema.js')
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
-/**
- * git clone <link>
- * 
- * (add .gitignore file)
- * 
- * git add .
- * git commit -m "any msg"
- * git push origin main
- * 
- * git config --global user.name '<username>'
- * git config --global user.email <emailId>
- */
-
-/**
- * Expense Tracker
- * 
- * Features and end points
- * 
- * Adding a new expense/income : /add-expense -> post
- * Displaying existing expenses : /get-expenses -> get
- * Editing existing entries : /edit-expense -> patch/put
- * Deleting expenses : /delete-expense -> delete
- * 
- * Budget reporting
- * Creating new user
- * Validating user
- * 
- * Defining schema
- * category, amount, date 
- */
 
 async function connectToDb() {
     try {
