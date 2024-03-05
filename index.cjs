@@ -1,10 +1,12 @@
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const express = require('express')
 const mongoose = require('mongoose')
 const { Expense } = require('./Schema.js')
 
 const app = express()
 app.use(bodyParser.json())
+app.use(cors())
 /**
  * git clone <link>
  * 
@@ -40,7 +42,7 @@ async function connectToDb() {
     try {
         await mongoose.connect('mongodb+srv://nithishnith:nithishray123@nithish.jj1kitv.mongodb.net/Expense-Tracker?retryWrites=true&w=majority&appName=nithish')
         console.log('DB connection established :)')
-        const port = 8000
+        const port = process.env.PORT || 8000
         app.listen(port, function() {
             console.log(`Listening on port ${port}...`)
         })
